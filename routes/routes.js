@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 router.post('/quiz', (req, res) => {
   res.render('quiz', {
     title: 'Quiz Question',
+    step: 2,
     state: {},
     outcome: null
   });
