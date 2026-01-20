@@ -1,7 +1,93 @@
+
+/* Reset + base styles */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 body {
-  font-family: system-ui, Arial, sans-serif;
-  background: #f6f7fb;
   margin: 0;
-  color: #222;
+  color: #3b2f2f;
+  background-color: #f3e5d8;
+  background-image:
+    radial-gradient(#c49a6c 6px, transparent 7px),
+    radial-gradient(#b08968 6px, transparent 7px);
+  background-position: 0 0, 30px 30px;
+  background-size: 60px 60px;
+}
+
+
+/* Main container */
+.wrap {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+/* Forms */
+form {
+  margin-top: 24px;
+}
+
+/* Radio options */
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+form label,
+form input[type="radio"] {
+  cursor: pointer;
+}
+
+/* Space radio options nicely */
+form br {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+/* Outcome card */
+.card {
+  margin-top: 24px;
+  padding: 24px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.card p {
+  line-height: 1.6;
 }
 

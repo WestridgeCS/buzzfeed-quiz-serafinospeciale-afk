@@ -11,21 +11,45 @@
     <h1><%= title %></h1>
     <% if (step == 1) { %>
       <form action="/quiz" method="POST">
-        <h2>Question 1: What's your favorite color?</h2>
-        <input type="radio" name="q1" value="red" required /> Red<br />
-        <input type="radio" name="q1" value="blue" /> Blue<br />
-        <input type="radio" name="q1" value="green" /> Green<br />
+        <h2>Question 1: How would your friends describe you?</h2>
+        <input type="radio" name="describe" value="warm" required /> Warm and Friendly<br />
+        <input type="radio" name="describe" value="cold" /> Cold and Calculating<br />
         <button type="submit">Next</button>
       </form>
     <% } else if (step == 2) { %>
       <form action="/quiz" method="POST"> 
-        <h2>Question 2: What's your favorite animal?</h2>
-        <input type="radio" name="q2" value="cat" required /> Cat<br />
-        <input type="radio" name="q2" value="dog" /> Dog<br />
-        <input type="radio" name="q2" value="bird" /> Bird<br />
-        <input type="hidden" name="q1" value="<%= state.q1 %>" />
+        <h2>Question 2: Which would you rather eat?</h2>
+        <input type="radio" name="food" value="sandwich" required /> A Sandwich<br />
+        <input type="radio" name="food" value="pizza" /> A Pizza<br />
+        <input type="hidden" name="describe" value="<%= state.describe %>" />
         <button type="submit">Next</button>
       </form>
+    <% }
+    else if (step == 3) { %>
+      <form action="/quiz" method="POST"> 
+        <h2>Question 3: Are you a child?</h2>
+        <input type="radio" name="child" value="yes" required /> Yes<br />
+        <input type="radio" name="child" value="no" /> No<br />
+        <input type="hidden" name="describe" value="<%= state.describe %>" />
+        <input type="hidden" name="food" value="<%= state.food %>" />
+        <button type="submit">Reveal your cookie!</button>
+      </form>
+    <% }
+    
+    %>
+    <% if (step === 4) { %>
+      <h2>Outcome</h2>
+
+      <div class="card">
+        <h3><%= outcome.heading %></h3>
+        <p><%= outcome.text %></p>
+
+        <form action="/" method="get">
+          <button type="submit">Play Again</button>
+        </form>
+      </div>
+
+      
     <% } %>
   </main>
 </body>
