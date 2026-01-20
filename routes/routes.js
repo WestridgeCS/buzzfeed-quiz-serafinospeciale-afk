@@ -4,7 +4,7 @@ export const router = Router();
 
 router.get('/', (req, res) => {
   res.render('quiz', {
-    title: 'Buzzfeed Quiz',
+    title: 'Cookie Quiz ',
     step: 1,
     state: {},
     outcome: null
